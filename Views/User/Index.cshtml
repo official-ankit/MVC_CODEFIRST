@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MVC_CODEFIRST.Models.Students>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Adress</th>
+        <th>Course</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.Name</td>
+            <td>@i.Email</td>
+            <td>@i.Mobile</td>
+            <td>@i.Adress</td>
+            <td>@i.Course</td>
+            <td>
+                <a href="/User/Edit?id=@i.Id">Edit
+                <a href="/User/Delete?id=@i.Id">Delete
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Create", "Create")
